@@ -3,8 +3,16 @@ services:
   nginx:
     build: ./nginx
     image: devops/nginx
-    container_name: 'nginx'
+    container_name: nginx
     ports:
       - "80:80"
     volumes:
       - ~/log/nginx:/var/log/nginx
+  nodejs:
+    build: ./nodejs
+    image: devops/nodejs
+    container_name: nodejs
+    ports:
+      - "8001:3000"
+    environment:
+        NODE_ENV: production

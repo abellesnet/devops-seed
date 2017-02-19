@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   nginx:
     build: ./nginx
@@ -8,13 +9,18 @@ services:
       - "80:80"
     volumes:
       - ~/log/nginx:/var/log/nginx
+      - nodejs-static:/var/static/nodejs
+    links:
+      - nodejs
   nodejs:
     build: ./nodejs
     image: devops/nodejs
     container_name: nodejs
-    ports:
-      - "8001:3000"
     volumes:
       - ~/log/nodejs:/home/node/pm2logs
+      - nodejs-static:/usr/src/app/public
     environment:
         NODE_ENV: production
+
+volumes:
+  nodejs-static:

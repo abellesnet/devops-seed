@@ -21,6 +21,16 @@ services:
       - nodejs-static:/usr/src/app/public
     environment:
         NODE_ENV: production
+  django:
+    build: ./django
+    image: devops/django
+    container_name: django
+    ports:
+      - "8000:8000"
+    volumes:
+      - ~/log/django:/var/log
+    environment:
+      - DJANGO_SETTINGS_MODULE=app.settings_prod
 
 volumes:
   nodejs-static:

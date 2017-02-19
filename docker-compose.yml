@@ -14,5 +14,7 @@ services:
     container_name: nodejs
     ports:
       - "8001:3000"
+    volumes:
+      - ~/log/nodejs:/home/node/pm2logs
     environment:
         NODE_ENV: production

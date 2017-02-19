@@ -7,7 +7,7 @@ docker rm -f $(docker ps -q -a -f name=devops)
 docker rmi -f $(docker images -q -a -f dangling=true)
 
 # build images
-docker-compose build
+docker-compose build --force-rm --pull
 
 # start containers
-docker-compose up
+docker-compose up --force-recreate --remove-orphans

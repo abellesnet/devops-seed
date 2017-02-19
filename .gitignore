@@ -1,3 +1,6 @@
+.idea
+.vscode
+
 node_modules
 
 db.sqlite3

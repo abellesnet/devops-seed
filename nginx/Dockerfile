@@ -15,3 +15,7 @@ RUN mkdir /etc/nginx/sites-enabled
 COPY nodejs /etc/nginx/sites-available/nodejs
 
 RUN ln -s /etc/nginx/sites-available/nodejs /etc/nginx/sites-enabled/nodejs
+
+COPY django /etc/nginx/sites-available/django
+
+RUN ln -s /etc/nginx/sites-available/django /etc/nginx/sites-enabled/django

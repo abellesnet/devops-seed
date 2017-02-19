@@ -10,8 +10,10 @@ services:
     volumes:
       - ~/log/nginx:/var/log/nginx
       - nodejs-static:/var/static/nodejs
+      - django-static:/var/static/django
     links:
       - nodejs
+      - django
   nodejs:
     build: ./nodejs
     image: devops/nodejs
@@ -25,12 +27,12 @@ services:
     build: ./django
     image: devops/django
     container_name: django
-    ports:
-      - "8000:8000"
     volumes:
       - ~/log/django:/var/log
+      - django-static:/var/django
     environment:
       - DJANGO_SETTINGS_MODULE=app.settings_prod
 
 volumes:
   nodejs-static:
+  django-static:

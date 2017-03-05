@@ -1,6 +1,6 @@
 server {
     listen       80;
-    server_name  nodejs.localhost;
+    server_name  nodejs.devops-seed.com;
 
     location ~ ^/(stylesheets|css|img|fonts|js|sounds)/ {
         add_header X-Served-From nginx;

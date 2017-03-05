@@ -24,9 +24,32 @@ Desplieque de un arquitectura basada en microservicios mediante contenedores Doc
 
 ### Arranque de servicios
 
-Ejecutar el script **start-services.sh**
+Ejecutar el siguiente script:
+
+```bash
+./start_services.sh
+```
 
 ### Logs
 
-Los logs de todos los servicios se recogen en una ubicación única de la máquina anfitriona: *~/log*
+Los logs de todos los servicios se recogen en una ubicación única de la máquina anfitriona: 
 
+```bash
+~/log
+```
+
+Para monitorizarlos en tiempo real se puede utilizar el siguiente comando:
+
+```bash
+tail -f ~/log/*/*
+```
+
+### Acceso a la consola de los contenedores
+
+Se puede acceder a la consola de cada uno de los contenedores con los siguientes respectivos comandos:
+
+```bash
+docker exec -it $(docker ps -q -f name=nginx) /bin/bash
+docker exec -it $(docker ps -q -f name=django) /bin/bash
+docker exec -it $(docker ps -q -f name=nodejs) /bin/bash
+```

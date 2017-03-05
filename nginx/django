@@ -1,6 +1,6 @@
 server {
     listen       80;
-    server_name  django.localhost;
+    server_name  django.devops-seed.com;
 
     location /static/ {
         add_header X-Served-From nginx;

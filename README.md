@@ -122,3 +122,18 @@ docker exec -it $(docker ps -q -f name=nodejs) /bin/bash
 
 Si se dispone de dominios y subdominios registrados habrá que actualizar los archivos de configuración de NGINX para que atienda las peticiones que vengan hacia esos dominios. Si no disponemos de dominios registrados, podemos cambiar el archivo Hosts para que apunte a la IP pública del servidor de producción, si queremos probarlo. 
 
+---
+
+## Puesta en producción real
+
+El presente proyecto está disponible, para ser evaluado, en las siguientes URLs:
+
+<http://www.trackatrack.net>
+
+<http://django.trackatrack.net>
+
+<http://www.trackatrack.net/django/>
+
+<http://nodejs.trackatrack.net>
+
+<http://www.trackatrack.net/nodejs/>
